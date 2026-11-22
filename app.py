@@ -53,7 +53,7 @@ def today(): return date.today().isoformat()
 
 # ------------------------------------------------------------ pages / config
 @app.get("/")
-def index(): return send_from_directory("static", "index.html")
+def index(): return send_from_directory(os.path.join(BASE, "static"), "index.html")
 
 @app.get("/api/config")
 def config():
